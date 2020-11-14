@@ -19,4 +19,3 @@ const createElement = item => {
 ingredients.forEach(element => {
   createElement(element);
 });
-console.log(ingredientsListRef);
