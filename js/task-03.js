@@ -18,18 +18,20 @@ const images = [
 
 const galleryRef = document.querySelector('#gallery');
 
-const createImg = (url, alt) => {
+const createImg = item => {
   const listItemRef = document.createElement('li');
   listItemRef.classList.add('gallery__item');
+
   const imgRef = document.createElement('img');
   imgRef.classList.add('gallery__img');
-  imgRef.src = url;
-  imgRef.alt = alt;
+  imgRef.src = item.url;
+  imgRef.alt = item.alt;
 
   listItemRef.appendChild(imgRef);
-  galleryRef.appendChild(listItemRef);
+
+  return listItemRef;
 };
 
-images.map(({ url, alt }) => {
-  createImg(url, alt);
-});
+const geleryItemArr = images.map(image => createImg(image));
+
+galleryRef.append(...geleryItemArr);
