@@ -18,9 +18,7 @@ const onBtnIncrement = () => {
 };
 
 function onBtnDecrement() {
-  if (counterValue > 0) {
-    counterValue -= 1;
-  }
+  counterValue -= 1;
 
   setTextContent();
 }
